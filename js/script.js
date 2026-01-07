@@ -1,14 +1,20 @@
-console.log("Satic Day 3: Desktop Navbar loaded");
 
+document.addEventListener('DOMContentLoaded', () => {
+  const links = document.querySelectorAll('.nav-link');
+  const cta = document.querySelector('.primary-btn');
+  
 
-document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', (e) => {
-    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-    e.target.classList.add('active');
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      links.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    });
   });
-});
-
-
-document.querySelector('.nav-cta')?.addEventListener('click', () => {
-  alert('Get Started clicked!');
+  
+  
+  cta.addEventListener('click', () => {
+    alert('Get Started - Professional Navbar Complete!');
+  });
+  
+  console.log('Satic Day 3 Glass Navbar Loaded ✅');
 });
