@@ -3,22 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Satic Frontend Day 2</title>
+  <title>Satic Frontend Day 3</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="demo">
-    <h1>Day 2: Primary Button Component</h1>
+  <nav class="navbar">
+    <!-- Logo placeholder -->
+    <div class="logo">Satic</div>
     
+    <!-- 3 navigation links -->
+    <ul class="nav-links">
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#services" class="nav-link">Services</a></li>
+    </ul>
     
-    <button class="primary-btn" data-text="Click Me">Click Me</button>
-    
-    
-    <button class="primary-btn" data-text="Hover Me">Hover Me</button>
-    
-    
-    <button class="primary-btn ldisabled" data-text="Disabled" disabled>Disabled</button>
-  </div>
+    <!-- Primary action button -->
+    <button class="primary-btn nav-cta" data-text="Get Started">Get Started</button>
+  </nav>
+
+  <main>
+    <div class="demo">
+      <h1>Day 3: Desktop Navigation Bar</h1>
+      <p>Scroll down to see fixed navbar. Click links for active state.</p>
+    </div>
+  </main>
 
   <script src="js/script.js"></script>
 </body>
