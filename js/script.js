@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const body = document.body;
   const links = document.querySelectorAll('.nav-link, .mobile-nav-link');
   const cta = document.querySelector('.primary-btn');
+  const hamburger = document.querySelector('.mobile-trigger, #hamburger');
+
 
 
   hamburger.addEventListener('click', () => {
