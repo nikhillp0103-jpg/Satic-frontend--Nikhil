@@ -6,12 +6,14 @@ const items = document.querySelectorAll(".menu li");
 function openMenu() {
     sidebar.classList.add("active");
     overlay.classList.add("active");
+    hamburger.classList.add("active");
     document.body.classList.add("menu-open");
 }
 
 function closeMenu() {
     sidebar.classList.remove("active");
     overlay.classList.remove("active");
+    hamburger.classList.remove("active");
     document.body.classList.remove("menu-open");
 }
 
@@ -28,4 +30,3 @@ items.forEach(item => {
         closeMenu();
     };
 });
-
