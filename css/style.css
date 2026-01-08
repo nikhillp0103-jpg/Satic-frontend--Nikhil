@@ -136,3 +136,16 @@ body.menu-open { overflow: hidden; }
 @media (min-width: 769px) {
   .mobile-menu { display: none; }
 }
+
+.mobile-trigger {
+  display: none;
+  color: #1e293b;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .mobile-trigger { display: block; }
+  .logo { font-size: 1.2rem; }
+}
+
