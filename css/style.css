@@ -2,11 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: "Segoe UI", sans-serif;
 }
 
 body {
-    background: #f4f4f4;
+    background: linear-gradient(135deg, #eef2f3, #d9e4f5);
 }
 
 body.menu-open {
@@ -14,22 +14,48 @@ body.menu-open {
 }
 
 .hamburger {
-    font-size: 30px;
-    padding: 15px 20px;
-    cursor: pointer;
     position: fixed;
+    top: 18px;
+    left: 20px;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
     z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hamburger span {
+    height: 4px;
+    width: 100%;
+    background: #111;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
 }
 
 .sidebar {
     position: fixed;
     top: 0;
-    left: -260px;
-    width: 260px;
+    left: -270px;
+    width: 270px;
     height: 100%;
-    background: #111;
-    transition: 0.3s ease;
+    background: linear-gradient(180deg, #0f2027, #203a43, #2c5364);
+    transition: 0.4s ease;
     z-index: 1000;
+    box-shadow: 5px 0 20px rgba(0,0,0,0.4);
 }
 
 .sidebar.active {
@@ -37,40 +63,69 @@ body.menu-open {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 25px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo img {
+    width: 42px;
+    height: 42px;
+}
+
+.logo span {
     color: #fff;
-    font-size: 24px;
-    text-align: center;
-    padding: 25px 0;
-    border-bottom: 1px solid #222;
+    font-size: 22px;
+    font-weight: 600;
 }
 
 .menu {
     list-style: none;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .menu li {
-    padding: 15px 30px;
-    color: #ccc;
+    padding: 16px 30px;
+    color: #d0d8dc;
     cursor: pointer;
+    position: relative;
+    transition: 0.3s;
+}
+
+.menu li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(#00c6ff, #0072ff);
+    opacity: 0;
 }
 
 .menu li:hover {
-    background: #1e1e1e;
+    background: rgba(255,255,255,0.08);
     color: #fff;
 }
 
 .menu li.active {
-    background: #0d6efd;
+    background: rgba(255,255,255,0.15);
     color: #fff;
+}
+
+.menu li.active::before {
+    opacity: 1;
 }
 
 .overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.5);
     display: none;
     z-index: 999;
+    backdrop-filter: blur(3px);
 }
 
 .overlay.active {
@@ -78,19 +133,26 @@ body.menu-open {
 }
 
 .content {
-    padding: 80px 25px;
-    max-width: 800px;
+    padding: 100px 25px;
+    max-width: 900px;
     margin: auto;
 }
 
-.content h1 {
+.card {
+    background: rgba(255,255,255,0.85);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.card h1 {
     margin-bottom: 15px;
     color: #111;
 }
 
-.content p {
+.card p {
     margin-bottom: 15px;
-    line-height: 1.6;
+    line-height: 1.7;
     color: #333;
 }
 
