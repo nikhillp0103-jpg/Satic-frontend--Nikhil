@@ -147,3 +147,26 @@ body.menu-open .side-panel { left: 0; }
 @media (min-width: 769px) {
   .hamburger, .overlay, .side-panel { display: none !important; }
 }
+
+
+
+
+
+.side-panel {
+  position: fixed; top: 0; left: -320px; width: 320px; height: 100vh;
+  background: rgba(15,15,40,0.98); backdrop-filter: blur(30px);
+  border-right: 1px solid rgba(255,255,255,0.1); z-index: 1002;
+  padding: 5rem 1.5rem 2rem; 
+  transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  will-change: left;
+}
+
+body.menu-open .side-panel {
+  left: 0 !important;
+  transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+  .side-panel { width: 280px; left: -280px !important; }
+  body.menu-open .side-panel { left: 0 !important; }
+}
