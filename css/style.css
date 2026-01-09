@@ -277,9 +277,10 @@ body.menu-open .sidebar {
 @media (min-width: 769px) {
   .hamburger, .overlay, .sidebar { display: none !important; }
   .search-container { 
-    position: static; 
-    margin: 2rem auto; 
-    max-width: 500px; 
+    position: relative;
+    margin: 3rem auto 0;
+    max-width: 600px;
+    z-index: 900;
   }
-  .main-content { padding-top: 120px; }
+  .main-content { padding-top: 200px; }
 }
