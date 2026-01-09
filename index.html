@@ -1,69 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>SATIC Navigation</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css?v=5">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glassmorphism Site</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
-<div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-</div>
+  <div class="overlay" id="overlay"></div>
 
-<div class="sidebar" id="sidebar">
-    <div class="logo">
-        <img src="logo.png" alt="SATIC Logo">
-        <span>SATIC</span>
-    </div>
-    <ul class="menu">
-        <li class="active">Home</li>
-        <li>About</li>
-        <li>Services</li>
-        <li>Contact</li>
+  <nav class="side-panel" id="sidePanel">
+    <div class="logo">LOGO</div>
+    <ul>
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#services" class="nav-link">Services</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
-</div>
+  </nav>
 
-<div class="overlay" id="overlay"></div>
+  <main class="main-content">
+    <nav class="top-nav">
+      <div class="search-container" role="search">
+        <form class="search-bar" id="searchForm">
+          <label for="searchInput" class="sr-only">Search</label>
+          <input 
+            type="search" 
+            id="searchInput" 
+            class="search-input" 
+            placeholder="Search here..." 
+            aria-labelledby="search-label"
+            required
+          >
+          <button type="submit" class="search-btn" id="searchBtn" aria-label="Submit search">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.35-4.35"></path>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </nav>
 
-<main class="content">
-    <div class="card">
-        <h1>Welcome to SATIC</h1>
-        <p>
-            SATIC is a modern digital company 
-        </p>
-        <p>
-            The sidebar includes smooth animations, scroll locking, and intuitive
-            interactions. It is fully optimized for mobile devices and deployed
-            using GitHub Pages.
-        </p>
+    <div class="hero">
+      <h1>Glassmorphism Design</h1>
+      <p>Day 5: Search Bar Complete</p>
     </div>
-</main>
+  </main>
 
-<script src="js/script.js?v=5"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
-
-    
-
-
-
-
-
-
-
-
- 
-
-
-
-  
-
-
-
-
-
-
