@@ -2,42 +2,41 @@ const hamburger = document.getElementById('hamburger');
 const overlay = document.getElementById('overlay');
 const sidePanel = document.getElementById('sidePanel');
 const navLinks = document.querySelectorAll('.nav-link');
+const searchForm = document.getElementById('searchForm');
+const searchInput = document.getElementById('searchInput');
 
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  overlay.classList.toggle('active');
-  sidePanel.classList.toggle('active');
+hamburger?.addEventListener('click', () => {
+  document.body.classList.toggle('menu-open');
 });
 
-overlay.addEventListener('click', () => {
-  hamburger.classList.remove('active');
-  overlay.classList.remove('active');
-  sidePanel.classList.remove('active');
+overlay?.addEventListener('click', () => {
+  document.body.classList.remove('menu-open');
 });
 
 navLinks.forEach(link => {
   link.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    overlay.classList.remove('active');
-    sidePanel.classList.remove('active');
+    document.body.classList.remove('menu-open');
+    const pills = document.querySelectorAll('.nav-link-pill');
+    pills.forEach(p => p.classList.remove('active'));
   });
 });
 
-navLinks.forEach(link => {
-  link.addEventListener('click', function() {
-    navLinks.forEach(l => l.classList.remove('active'));
-    this.classList.add('active');
-  });
-});
-
-document.getElementById('searchForm').addEventListener('submit', function(e) {
+searchForm.addEventListener('submit', e => {
   e.preventDefault();
-  const query = document.getElementById('searchInput').value.trim();
-  if (query === '') {
-    alert('Please enter a search term.');
-    document.getElementById('searchInput').focus();
+  const query = searchInput.value.trim();
+  if (!query) {
+    searchInput.focus();
+    searchInput.placeholder = 'Enter search term...';
+    setTimeout(() => searchInput.placeholder = 'Search...', 2000);
     return;
   }
-  alert(`Searching for: "${query}"`);
-  console.log('Search query:', query);
+  console.log('Search:', query);
+  alert(`Searching "${query}"`);
+});
+
+document.querySelectorAll('.nav-link-pill, .nav-link').forEach(link => {
+  link.addEventListener('click', function() {
+    this.closest('nav')?.querySelectorAll('.active')?.forEach(a => a.classList.remove('active'));
+    this.classList.add('active');
+  });
 });
