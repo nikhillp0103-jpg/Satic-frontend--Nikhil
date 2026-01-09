@@ -165,11 +165,15 @@ body {
 }
 
 .search-container {
-  position: fixed;
-  top: 90px;
-  left: 90px;
-  right: 2rem;
-  z-index: 999;
+  width: 100%;
+  max-width: 500px;
+  margin: 2rem auto 0;
+}
+
+@media (max-width: 768px) {
+  .search-container {
+    margin: 1.5rem 20px 0;
+  }
 }
 
 .search-form {
