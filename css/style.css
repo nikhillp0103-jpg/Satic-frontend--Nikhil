@@ -12,6 +12,7 @@ body {
   overflow-x: hidden;
 }
 
+
 .header {
   position: fixed;
   top: 0;
@@ -26,6 +27,10 @@ body {
   align-items: center;
   gap: 1rem;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+}
+
+.hamburger {
+  z-index: 1005 !important;
 }
 
 .logo {
