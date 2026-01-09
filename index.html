@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Glassmorphism Site</title>
+  <title>Premium Glass Site</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-    <span></span>
-    <span></span>
-    <span></span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
   </button>
 
   <div class="overlay" id="overlay"></div>
@@ -25,32 +27,33 @@
     </ul>
   </nav>
 
-  <main class="main-content">
-    <nav class="top-nav">
-      <div class="search-container" role="search">
-        <form class="search-bar" id="searchForm">
+  <header class="floating-nav">
+    <nav class="nav-pills">
+      <div class="nav-item">
+        <a href="#home" class="nav-link-pill active">Home</a>
+      </div>
+      <div class="search-wrapper">
+        <form class="search-container" id="searchForm" role="search">
           <label for="searchInput" class="sr-only">Search</label>
-          <input 
-            type="search" 
-            id="searchInput" 
-            class="search-input" 
-            placeholder="Search here..." 
-            aria-labelledby="search-label"
-            required
-          >
-          <button type="submit" class="search-btn" id="searchBtn" aria-label="Submit search">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <input type="search" id="searchInput" class="search-input" placeholder="Search..." aria-label="Search" required>
+          <button type="submit" class="search-trigger" id="searchBtn" aria-label="Search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <circle cx="11" cy="11" r="8"></circle>
               <path d="m21 21-4.35-4.35"></path>
             </svg>
           </button>
         </form>
       </div>
+      <div class="nav-item">
+        <a href="#contact" class="nav-link-pill">Contact</a>
+      </div>
     </nav>
+  </header>
 
+  <main class="content">
     <div class="hero">
-      <h1>Glassmorphism Design</h1>
-      <p>Day 5: Search Bar Complete</p>
+      <h1>Premium Glassmorphism</h1>
+      <p>Day 5: Ultimate Responsive Design</p>
     </div>
   </main>
 
