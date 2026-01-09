@@ -1,61 +1,31 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const hamburger = document.querySelector('.hamburger');
-  const overlay = document.getElementById('overlay');
-  const sidebar = document.getElementById('sidebar');
-  const closeBtn = document.getElementById('closeBtn');
-  const menuItems = document.querySelectorAll('.menu-item');
-  const searchForm = document.getElementById('searchForm');
-  const searchInput = document.getElementById('searchInput');
-  const pages = document.querySelectorAll('.page');
+const hamburger = document.getElementById('hamburger');
+const overlay = document.getElementById('overlay');
+const sidebar = document.getElementById('sidebar');
+const menuItems = document.querySelectorAll('.menu-item');
+const searchBtn = document.getElementById('searchBtn');
+const searchInput = document.getElementById('search');
 
+hamburger.onclick = () => {
+  document.body.classList.toggle('menu-open');
+};
 
-  function toggleMenu(open) {
-    document.body.classList.toggle('menu-open', open);
-    hamburger.classList.toggle('active', open);
-  }
+overlay.onclick = () => {
+  document.body.classList.remove('menu-open');
+};
 
-  hamburger.addEventListener('click', () => toggleMenu(true));
-  overlay.addEventListener('click', () => toggleMenu(false));
-  closeBtn.addEventListener('click', () => toggleMenu(false));
-
-  
-  menuItems.forEach(item => {
-    item.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetPage = item.getAttribute('data-page');
-      
-      
-      menuItems.forEach(i => i.classList.remove('active'));
-      pages.forEach(p => p.classList.remove('active'));
-      item.classList.add('active');
-      document.getElementById(targetPage).classList.add('active');
-      
-      toggleMenu(false);
-    });
-  });
-
-  
-  searchForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const query = searchInput.value.trim();
-    if (!query) {
-      searchInput.style.borderColor = '#ef5350';
-      searchInput.placeholder = 'Please enter a search term';
-      setTimeout(() => {
-        searchInput.style.borderColor = '';
-        searchInput.placeholder = 'Search anything...';
-      }, 2000);
-      return;
-    }
-    console.log('Searching for:', query);
-    alert(`Searching for: "${query}"`);
-    searchInput.value = '';
-  });
-
-  
-  searchInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-      searchForm.dispatchEvent(new Event('submit'));
-    }
-  });
+menuItems.forEach(item => {
+  item.onclick = () => {
+    document.body.classList.remove('menu-open');
+    menuItems.forEach(i => i.classList.remove('active'));
+    item.classList.add('active');
+  };
 });
+
+searchBtn.onclick = () => {
+  const text = searchInput.value.trim();
+  if (text === '') {
+    alert('Please type something');
+  } else {
+    alert('Searching: ' + text);
+  }
+};
