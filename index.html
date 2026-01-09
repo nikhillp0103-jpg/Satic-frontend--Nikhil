@@ -3,31 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Mobile Nav</title>
+  <title>Minimal Nav</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <button class="hamburger" id="hamburger">☰</button>
-  
-  <div class="overlay" id="overlay"></div>
-  
-  <div class="sidebar" id="sidebar">
-    <div class="logo">MENU</div>
-    <a href="#" class="menu-item active">Home</a>
-    <a href="#" class="menu-item">About</a>
-    <a href="#" class="menu-item">Services</a>
-    <a href="#" class="menu-item">Contact</a>
-  </div>
+  <header class="nav">
+    <div class="logo">LOGO</div>
+    <nav class="links">
+      <a href="#" class="active">Home</a>
+      <a href="#">Features</a>
+      <a href="#">Pricing</a>
+      <button class="primary">Get Started</button>
+    </nav>
+    <button class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
 
-  <div class="search-box">
-    <input type="text" id="search" placeholder="Search...">
-    <button id="searchBtn">Search</button>
-  </div>
+  <div class="mobile-overlay" id="overlay"></div>
 
-  <div class="content">
+  <aside class="mobile-menu" id="mobileMenu">
+    <a href="#" class="active">Home</a>
+    <a href="#">Features</a>
+    <a href="#">Pricing</a>
+    <button class="primary">Get Started</button>
+  </aside>
+
+  <main class="content">
     <h1>Simple Design</h1>
-    <p>✅ Hamburger works<br>✅ Sidebar slides<br>✅ No scroll when open<br>✅ Closes on click</p>
-  </div>
+    <p>This is where your content goes.</p>
+  </main>
 
   <script src="js/script.js"></script>
 </body>
