@@ -1,32 +1,43 @@
-const hamburger = document.getElementById("hamburger");
-const sidebar = document.getElementById("sidebar");
-const overlay = document.getElementById("overlay");
-const items = document.querySelectorAll(".menu li");
+const hamburger = document.getElementById('hamburger');
+const overlay = document.getElementById('overlay');
+const sidePanel = document.getElementById('sidePanel');
+const navLinks = document.querySelectorAll('.nav-link');
 
-function openMenu() {
-    sidebar.classList.add("active");
-    overlay.classList.add("active");
-    hamburger.classList.add("active");
-    document.body.classList.add("menu-open");
-}
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  overlay.classList.toggle('active');
+  sidePanel.classList.toggle('active');
+});
 
-function closeMenu() {
-    sidebar.classList.remove("active");
-    overlay.classList.remove("active");
-    hamburger.classList.remove("active");
-    document.body.classList.remove("menu-open");
-}
+overlay.addEventListener('click', () => {
+  hamburger.classList.remove('active');
+  overlay.classList.remove('active');
+  sidePanel.classList.remove('active');
+});
 
-hamburger.onclick = () => {
-    sidebar.classList.contains("active") ? closeMenu() : openMenu();
-};
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    overlay.classList.remove('active');
+    sidePanel.classList.remove('active');
+  });
+});
 
-overlay.onclick = closeMenu;
+navLinks.forEach(link => {
+  link.addEventListener('click', function() {
+    navLinks.forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
 
-items.forEach(item => {
-    item.onclick = () => {
-        items.forEach(i => i.classList.remove("active"));
-        item.classList.add("active");
-        closeMenu();
-    };
+document.getElementById('searchForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const query = document.getElementById('searchInput').value.trim();
+  if (query === '') {
+    alert('Please enter a search term.');
+    document.getElementById('searchInput').focus();
+    return;
+  }
+  alert(`Searching for: "${query}"`);
+  console.log('Search query:', query);
 });
