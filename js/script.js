@@ -1,42 +1,38 @@
-const hamburger = document.getElementById('hamburger');
-const overlay = document.getElementById('overlay');
-const sidePanel = document.getElementById('sidePanel');
-const navLinks = document.querySelectorAll('.nav-link');
-const searchForm = document.getElementById('searchForm');
-const searchInput = document.getElementById('searchInput');
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.getElementById('hamburger');
+  const overlay = document.getElementById('overlay');
+  const body = document.body;
+  const navLinks = document.querySelectorAll('.nav-link, .nav-link-pill');
+  const searchForm = document.getElementById('searchForm');
+  const searchInput = document.getElementById('searchInput');
 
-hamburger?.addEventListener('click', () => {
-  document.body.classList.toggle('menu-open');
-});
-
-overlay?.addEventListener('click', () => {
-  document.body.classList.remove('menu-open');
-});
-
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    document.body.classList.remove('menu-open');
-    const pills = document.querySelectorAll('.nav-link-pill');
-    pills.forEach(p => p.classList.remove('active'));
+  hamburger.addEventListener('click', function() {
+    body.classList.toggle('menu-open');
+    this.classList.toggle('active');
   });
-});
 
-searchForm.addEventListener('submit', e => {
-  e.preventDefault();
-  const query = searchInput.value.trim();
-  if (!query) {
-    searchInput.focus();
-    searchInput.placeholder = 'Enter search term...';
-    setTimeout(() => searchInput.placeholder = 'Search...', 2000);
-    return;
-  }
-  console.log('Search:', query);
-  alert(`Searching "${query}"`);
-});
+  overlay.addEventListener('click', function() {
+    body.classList.remove('menu-open');
+    hamburger.classList.remove('active');
+  });
 
-document.querySelectorAll('.nav-link-pill, .nav-link').forEach(link => {
-  link.addEventListener('click', function() {
-    this.closest('nav')?.querySelectorAll('.active')?.forEach(a => a.classList.remove('active'));
-    this.classList.add('active');
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      body.classList.remove('menu-open');
+      hamburger.classList.remove('active');
+      navLinks.forEach(function(l) { l.classList.remove('active'); });
+      this.classList.add('active');
+    });
+  });
+
+  searchForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const query = searchInput.value.trim();
+    if (!query) {
+      alert('Please enter search term');
+      searchInput.focus();
+      return;
+    }
+    console.log('Searching for:', query);
   });
 });
