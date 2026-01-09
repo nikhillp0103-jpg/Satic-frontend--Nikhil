@@ -278,8 +278,12 @@ body.menu-open .sidebar {
 }
 
 @media (min-width: 769px) {
-  .hamburger, .overlay, .sidebar { display: none !important; }
-  .main-content { padding-top: 140px; }
+  .hamburger, .overlay {
+    display: flex !important; 
+  }
+  .sidebar {
+    display: block !important;
+  }
 }
 
 @media (min-width: 769px) {
