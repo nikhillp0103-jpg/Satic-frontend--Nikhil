@@ -1,31 +1,28 @@
-const hamburger = document.getElementById('hamburger');
-const overlay = document.getElementById('overlay');
-const sidebar = document.getElementById('sidebar');
-const menuItems = document.querySelectorAll('.menu-item');
-const searchBtn = document.getElementById('searchBtn');
-const searchInput = document.getElementById('search');
+const menu = document.getElementById("mobileMenu");
+const overlay = document.getElementById("overlay");
+const btn = document.getElementById("hamburger");
 
-hamburger.onclick = () => {
-  document.body.classList.toggle('menu-open');
-};
+function openMenu() {
+  menu.style.left = "0px";
+  overlay.style.opacity = "1";
+  overlay.style.pointerEvents = "auto";
+  document.body.classList.add("noscroll");
+}
 
-overlay.onclick = () => {
-  document.body.classList.remove('menu-open');
-};
+function closeMenu() {
+  menu.style.left = "-250px";
+  overlay.style.opacity = "0";
+  overlay.style.pointerEvents = "none";
+  document.body.classList.remove("noscroll");
+}
 
-menuItems.forEach(item => {
-  item.onclick = () => {
-    document.body.classList.remove('menu-open');
-    menuItems.forEach(i => i.classList.remove('active'));
-    item.classList.add('active');
-  };
+btn.addEventListener("click", () => {
+  const open = menu.style.left === "0px";
+  open ? closeMenu() : openMenu();
 });
 
-searchBtn.onclick = () => {
-  const text = searchInput.value.trim();
-  if (text === '') {
-    alert('Please type something');
-  } else {
-    alert('Searching: ' + text);
-  }
-};
+overlay.addEventListener("click", closeMenu);
+
+menu.querySelectorAll("a, button").forEach(el => {
+  el.addEventListener("click", closeMenu);
+});
