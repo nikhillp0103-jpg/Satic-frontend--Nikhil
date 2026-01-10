@@ -278,13 +278,25 @@ body.menu-open .sidebar {
 }
 
 @media (min-width: 769px) {
-  .hamburger, .overlay {
-    display: flex !important; 
-  }
+  .hamburger { display: none !important; }
+  .overlay { display: none !important; }
+
   .sidebar {
     display: block !important;
+    transform: none !important;
+    position: static;
+    width: 260px;
+    height: auto;
+    box-shadow: none;
+    border-right: 1px solid #e2e8f0;
+  }
+
+  .main-content {
+    margin-left: 260px;
+    padding-top: 120px;
   }
 }
+
 
 @media (min-width: 769px) {
   .hamburger, .overlay, .sidebar { display: none !important; }
