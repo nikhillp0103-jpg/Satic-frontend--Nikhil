@@ -278,18 +278,39 @@ body.menu-open .sidebar {
 }
 
 @media (min-width: 769px) {
-  .hamburger { display: none !important; }
-  .overlay { display: none !important; }
 
+
+  .hamburger,
+  .overlay {
+    display: none !important; 
+  }
+  
   .sidebar {
     display: block !important;
-    transform: none !important;
-    position: static;
+    position: fixed;
+    left: 0;
+    top: 0;
     width: 260px;
-    height: auto;
-    box-shadow: none;
+    height: 100vh;
+    transform: none !important;
     border-right: 1px solid #e2e8f0;
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.98);
   }
+
+  
+  .main-content {
+    margin-left: 260px;
+    padding-top: 140px;
+  }
+
+  
+  .search-container {
+    max-width: 600px;
+    margin: 2rem auto 0;
+  }
+}
+
 
   .main-content {
     margin-left: 260px;
