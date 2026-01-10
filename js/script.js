@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('searchInput');
   const pages = document.querySelectorAll('.page');
 
-  
   function toggleMenu(open) {
     document.body.classList.toggle('menu-open', open);
     hamburger.classList.toggle('active', open);
@@ -18,44 +17,53 @@ document.addEventListener('DOMContentLoaded', () => {
   overlay.addEventListener('click', () => toggleMenu(false));
   closeBtn.addEventListener('click', () => toggleMenu(false));
 
-  
   menuItems.forEach(item => {
-    item.addEventListener('click', (e) => {
+    item.addEventListener('click', e => {
       e.preventDefault();
       const targetPage = item.getAttribute('data-page');
-      
-      
+
       menuItems.forEach(i => i.classList.remove('active'));
       pages.forEach(p => p.classList.remove('active'));
+
       item.classList.add('active');
       document.getElementById(targetPage).classList.add('active');
-      
+
       toggleMenu(false);
     });
   });
 
-  
-  searchForm.addEventListener('submit', (e) => {
+  searchForm.addEventListener('submit', e => {
     e.preventDefault();
     const query = searchInput.value.trim();
+
     if (!query) {
       searchInput.style.borderColor = '#e53e3e';
       searchInput.placeholder = 'Please enter a search term';
+
       setTimeout(() => {
         searchInput.style.borderColor = '';
         searchInput.placeholder = 'Search anything...';
       }, 2000);
+
       return;
     }
+
     console.log('Searching for:', query);
     alert(`Searching for: "${query}"`);
     searchInput.value = '';
   });
 
   
-  searchInput.addEventListener('keypress', (e) => {
+  searchInput.addEventListener('keypress', e => {
     if (e.key === 'Enter') {
       searchForm.dispatchEvent(new Event('submit'));
+    }
+  });
+
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 820) {
+      toggleMenu(false);
     }
   });
 });
