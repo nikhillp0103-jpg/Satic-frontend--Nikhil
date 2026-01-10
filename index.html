@@ -1,61 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Mobile Nav</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Mobile Nav</title>
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <header class="header">
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="logo">Brand</div>
-  </header>
 
-  <div class="overlay" id="overlay"></div>
-  
-  <nav class="sidebar" id="sidebar">
-    <div class="sidebar-header">
-      <h2>Menu</h2>
-      <button class="close-btn" id="closeBtn">×</button>
+<header class="header">
+  <div class="logo">Brand</div>
+
+  <ul class="nav-links">
+    <li><a href="#" data-page="home">Home</a></li>
+    <li><a href="#" data-page="about">About</a></li>
+    <li><a href="#" data-page="services">Services</a></li>
+    <li><a href="#" data-page="contact">Contact</a></li>
+  </ul>
+
+  <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</header>
+
+<div class="overlay" id="overlay"></div>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <h2>Menu</h2>
+    <button class="close-btn" id="closeBtn">×</button>
+  </div>
+
+  <ul class="menu-list">
+    <li><a href="#" class="menu-item active" data-page="home">Home</a></li>
+    <li><a href="#" class="menu-item" data-page="about">About</a></li>
+    <li><a href="#" class="menu-item" data-page="services">Services</a></li>
+    <li><a href="#" class="menu-item" data-page="contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main class="main-content">
+
+  <section id="home" class="page active">
+    <div class="hero">
+      <h1>Perfect Mobile Navigation</h1>
+      <p>Simple white/grey design</p>
     </div>
-    <ul class="menu-list">
-      <li><a href="#home" class="menu-item active" data-page="home">Home</a></li>
-      <li><a href="#about" class="menu-item" data-page="about">About</a></li>
-      <li><a href="#services" class="menu-item" data-page="services">Services</a></li>
-      <li><a href="#contact" class="menu-item" data-page="contact">Contact</a></li>
-    </ul>
-  </nav>
 
-  <main class="main-content">
-    <section id="home" class="page active">
-      <div class="hero">
-        <h1>Perfect Mobile Navigation</h1>
-        <p>Simple white/grey design</p>
-        
-        <div class="search-container">
-          <form class="search-form" id="searchForm">
-            <input type="search" id="searchInput" placeholder="Search anything..." required>
-            <button type="submit" class="search-btn" aria-label="Search">🔍</button>
-          </form>
-        </div>
-        
-      </div>
-    </section>
-    <section id="about" class="page">
-      <h1>About Content</h1>
-    </section>
-    <section id="services" class="page">
-      <h1>Services Content</h1>
-    </section>
-    <section id="contact" class="page">
-      <h1>Contact Content</h1>
-    </section>
-  </main>
+    <div class="search-container">
+      <form class="search-form" id="searchForm">
+        <input type="search" id="searchInput" placeholder="Search anything..." required>
+        <button type="submit" class="search-btn">🔍</button>
+      </form>
+    </div>
+  </section>
 
-  <script src="js/script.js"></script>
+  <section id="about" class="page">
+    <h1>About Content</h1>
+  </section>
+
+  <section id="services" class="page">
+    <h1>Services Content</h1>
+  </section>
+
+  <section id="contact" class="page">
+    <h1>Contact Content</h1>
+  </section>
+
+</main>
+
+<script src="js/script.js"></script>
 </body>
 </html>
