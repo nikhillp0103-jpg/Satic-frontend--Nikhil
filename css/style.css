@@ -414,3 +414,14 @@ body {
 body.menu-open {
   overflow: hidden;
 }
+/* DESKTOP FIX — REMOVE TOP HEADER, KEEP SIDEBAR */
+@media (min-width: 769px) {
+  .header {
+    display: none !important;
+  }
+
+  .main-content {
+    margin-left: 260px; /* space for sidebar */
+    padding-top: 40px; /* reduce empty space */
+  }
+}
