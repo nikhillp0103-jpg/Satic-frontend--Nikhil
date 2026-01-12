@@ -1,44 +1,66 @@
-// Mobile Menu Toggle
-const menuToggle = document.getElementById('menuToggle');
-const mainNav = document.getElementById('mainNav');
-
-menuToggle.addEventListener('click', () => {
-  mainNav.classList.toggle('active');
+// Wait for DOM to load
+document.addEventListener('DOMContentLoaded', function() {
   
-  // Lock body scroll when menu is open
-  document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : 'auto';
-});
-
-// Close menu when nav item clicked
-document.querySelectorAll('.nav-item').forEach(item => {
-  item.addEventListener('click', () => {
-    mainNav.classList.remove('active');
-    document.body.style.overflow = 'auto';
+  // HAMBURGER MENU FUNCTIONALITY
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const navLinks = document.getElementById('navLinks');
+  
+  hamburgerBtn.addEventListener('click', function() {
+    navLinks.classList.toggle('active');
+    
+    // Lock body scroll when menu is open
+    if (navLinks.classList.contains('active')) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
   });
-});
-
-// Search Functionality
-const searchForm = document.getElementById('searchForm');
-const searchInput = document.getElementById('searchInput');
-
-searchForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const query = searchInput.value.trim();
   
-  if (!query) {
-    alert('Please enter something to search!');
-    searchInput.focus();
-    return;
-  }
+  // Close menu when clicking any nav link
+  document.querySelectorAll('.nav-item').forEach(link => {
+    link.addEventListener('click', function() {
+      navLinks.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  });
   
-  alert(`🔍 Searching for: "${query}"`);
-  searchInput.value = '';
-});
-
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-  if (!header.contains(e.target)) {
-    mainNav.classList.remove('active');
-    document.body.style.overflow = 'auto';
-  }
+  // SEARCH BAR FUNCTIONALITY
+  const searchForm = document.getElementById('searchForm');
+  const searchInput = document.getElementById('searchInput');
+  
+  searchForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const query = searchInput.value.trim();
+    if (query) {
+      alert(`🔍 Searching for: "${query}"`);
+      searchInput.value = '';
+    } else {
+      alert('Please enter a search term!');
+      searchInput.focus();
+    }
+  });
+  
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', function(e) {
+    const isClickInsideNavbar = e.target.closest('.navbar');
+    if (!isClickInsideNavbar && navLinks.classList.contains('active')) {
+      navLinks.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+  
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
 });
