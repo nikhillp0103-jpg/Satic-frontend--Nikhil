@@ -1,104 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simple Mobile Nav + Cards</title>
-<link rel="stylesheet" href="css/style.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YourName | Frontend Assignment</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-<header class="header">
-  <div class="logo">Brand</div>
-  <ul class="nav-links">
-    <li><a href="#" data-page="home">Home</a></li>
-    <li><a href="#" data-page="about">About</a></li>
-    <li><a href="#" data-page="services">Services</a></li>
-    <li><a href="#" data-page="contact">Contact</a></li>
-  </ul>
-  <button class="hamburger" aria-label="Menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-</header>
+  <!-- HEADER NAVIGATION -->
+  <header class="header">
+    <div class="brand">🚀 YourName</div>
+    
+    <!-- Search Form -->
+    <form class="search-form" id="searchForm">
+      <input type="text" id="searchInput" placeholder="🔎 Search projects..." aria-label="Search">
+      <button type="submit">Go</button>
+    </form>
 
-<div class="overlay" id="overlay"></div>
+    <!-- Mobile Menu Toggle -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
 
-<nav class="sidebar" id="sidebar">
-  <div class="sidebar-header">
-    <h2>Menu</h2>
-    <button class="close-btn" id="closeBtn">×</button>
-  </div>
-  <ul class="menu-list">
-    <li><a href="#" class="menu-item active" data-page="home">Home</a></li>
-    <li><a href="#" class="menu-item" data-page="about">About</a></li>
-    <li><a href="#" class="menu-item" data-page="services">Services</a></li>
-    <li><a href="#" class="menu-item" data-page="contact">Contact</a></li>
-  </ul>
-</nav>
+    <!-- Main Menu -->
+    <nav class="main-nav" id="mainNav">
+      <a href="#" class="nav-item active">Home</a>
+      <a href="#" class="nav-item">Skills</a>
+      <a href="#" class="nav-item">Projects</a>
+      <a href="#" class="nav-item">Contact</a>
+    </nav>
+  </header>
 
-<main class="main-content">
-  <section id="home" class="page active">
-    <div class="hero">
-      <h1>Perfect Mobile Navigation</h1>
-      <p>Simple white/grey design + Day 6 Cards</p>
-    </div>
-    <div class="search-container">
-      <form class="search-form" id="searchForm">
-        <input type="search" id="searchInput" placeholder="Search anything..." required>
-        <button type="submit" class="search-btn">🔍</button>
-      </form>
-    </div>
-  </section>
-
-  <section id="about" class="page">
-    <h1>About Content</h1>
-  </section>
-
-  <section id="services" class="page">
-    <div class="cards-container">
-      <div class="card">
-        <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop" alt="Web Development">
-        </div>
-        <div class="card-content">
-          <h3>Web Development</h3>
-          <p>Modern responsive websites with clean code and smooth animations using HTML, CSS, JavaScript.</p>
-          <button class="card-btn">Learn More</button>
-        </div>
-      </div>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Frontend Developer</h1>
+      <h2>Assignment Completed</h2>
+      <p><strong>Student:</strong> Your Full Name</p>
+      <p>IMCA First Semester | GTU | Hosted on GitHub Pages</p>
       
-      <div class="card">
-        <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=250&fit=crop" alt="Mobile App">
-        </div>
-        <div class="card-content">
-          <h3>Mobile Apps</h3>
-          <p>Native and cross-platform mobile applications for iOS and Android with React Native.</p>
-          <button class="card-btn">Learn More</button>
-        </div>
-      </div>
-      
-      <div class="card">
-        <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop" alt="UI/UX Design">
-        </div>
-        <div class="card-content">
-          <h3>UI/UX Design</h3>
-          <p>Beautiful, user-centered designs that convert visitors to customers with glassmorphism effects.</p>
-          <button class="card-btn">Learn More</button>
-        </div>
+      <div class="btn-group">
+        <button class="cta-btn primary">Get Started</button>
+        <button class="cta-btn secondary" disabled>In Progress</button>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="page">
-    <h1>Contact Content</h1>
-  </section>
-</main>
+  <!-- PROJECT CARDS -->
+  <section class="projects">
+    <h2 class="section-title">My Projects</h2>
+    <div class="projects-grid" id="projectsGrid">
+      <article class="project-card">
+        <div class="project-image">
+          <img src="https://images.unsplash.com/photo-1516321310764-9f3c9619fd47?w=400" alt="Coding">
+        </div>
+        <div class="project-info">
+          <h3>React Native App</h3>
+          <p>Building cross-platform mobile apps with React Native for iOS & Android.</p>
+          <button class="project-btn">View Demo</button>
+        </div>
+      </article>
 
-<script src="js/script.js"></script>
+      <article class="project-card">
+        <div class="project-image">
+          <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400" alt="Web Design">
+        </div>
+        <div class="project-info">
+          <h3>Fullstack Website</h3>
+          <p>Complete web applications with modern HTML5, CSS3, and JavaScript ES6+.</p>
+          <button class="project-btn">View Demo</button>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-image">
+          <img src="https://images.unsplash.com/photo-1547658719-da2b848c1ad4?w=400" alt="Responsive">
+        </div>
+        <div class="project-info">
+          <h3>Responsive UI</h3>
+          <p>Mobile-first responsive designs that work perfectly across all devices.</p>
+          <button class="project-btn">View Demo</button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
