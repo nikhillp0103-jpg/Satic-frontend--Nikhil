@@ -1,3 +1,5 @@
+
+
 * {
   margin: 0;
   padding: 0;
@@ -34,25 +36,13 @@ body {
   color: #4a5568;
 }
 
+/* HIDE TOP NAV ON MOBILE - ONLY SHOW HAMBURGER */
 .nav-links {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
-  margin-left: auto;
-}
-
-.nav-links a {
-  color: #64748b;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: #1e293b;
+  display: none;
 }
 
 .hamburger {
+  margin-left: auto;
   background: none;
   border: 1px solid #cbd5e0;
   width: 42px;
@@ -287,11 +277,7 @@ body {
   box-shadow: 0 4px 12px rgba(66, 153, 225, 0.4);
 }
 
-body.menu-open {
-  overflow: hidden;
-}
-
-
+/* DAY 6 CARDS */
 .cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -376,19 +362,28 @@ body.menu-open {
   box-shadow: 0 8px 20px rgba(66, 153, 225, 0.3);
 }
 
-
+/* MOBILE */
 @media (max-width: 768px) {
   .search-container {
     margin: 1.5rem 20px 0;
   }
-  
   .main-content {
     padding: 120px 1rem 2rem;
   }
 }
 
+/* DESKTOP - ONLY SIDEBAR, NO TOP NAV */
 @media (min-width: 769px) {
-  .hamburger,
+  .nav-links {
+    display: flex;
+    margin-left: auto;
+    gap: 2rem;
+  }
+  
+  .hamburger {
+    display: none !important;
+  }
+  
   .overlay {
     display: none !important;
   }
@@ -414,9 +409,8 @@ body.menu-open {
     padding: 0 2rem;
     margin-left: 0;
   }
-  
-  .search-container {
-    max-width: 600px;
-    margin: 2rem auto 0;
-  }
+}
+
+body.menu-open {
+  overflow: hidden;
 }
