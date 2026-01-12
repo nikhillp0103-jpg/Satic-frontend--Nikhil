@@ -41,14 +41,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   
-  // Close mobile menu when clicking outside
-  document.addEventListener('click', function(e) {
-    const isClickInsideNavbar = e.target.closest('.navbar');
-    if (!isClickInsideNavbar && navLinks.classList.contains('active')) {
-      navLinks.classList.remove('active');
-      document.body.style.overflow = '';
+  // Close mobile menu when clicking outside (except hamburger button)
+document.addEventListener('click', function(e) {
+    const clickedHamburger = e.target.closest('#hamburgerBtn');
+    const clickedInsideNav = e.target.closest('.navbar');
+
+    if (!clickedInsideNav && !clickedHamburger && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        document.body.style.overflow = '';
     }
-  });
+});
+  
   
   // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
