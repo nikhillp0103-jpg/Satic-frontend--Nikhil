@@ -3,84 +3,92 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YourName | Frontend Assignment</title>
+  <title>nik | Frontend Task - Day 6</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- HEADER NAVIGATION -->
-  <header class="header">
-    <div class="brand">🚀 Empire</div>
-    
-    <form class="search-form" id="searchForm">
-      <input type="text" id="searchInput" placeholder="🔎 Search projects...">
-      <button type="submit">Go</button>
-    </form>
+  <!-- ORIGINAL MAIN CONTENT (KEEP AS IS) -->
+  <main class="original-main">
+    <h1>Frontend Internship</h1>
+    <h2>Day-6 Task Completed</h2>
+    <p>Name: <strong>Nikhil Patel</strong></p>
+    <p>IMCA-2 Deployed on GitHub Pages</p>
+    <button class="original-btn">Send</button>
+    <button class="original-btn" disabled>Disabled</button>
+  </main>
 
-    <button class="menu-toggle" id="menuToggle">☰</button>
-
-    <nav class="main-nav" id="mainNav">
-      <a href="#" class="nav-item active">Home</a>
-      <a href="#" class="nav-item">Skills</a>
-      <a href="#" class="nav-item">Projects</a>
-      <a href="#" class="nav-item">Contact</a>
-    </nav>
-  </header>
-
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Frontend Developer</h1>
-      <h2>Assignment Completed</h2>
-      <p><strong>Student:</strong> Nikhil Patel</p>
-      <p>IMCA First Semester | GTU | Hosted on GitHub Pages</p>
+  <!-- NEW TASK - DAY 6 FEATURES -->
+  <section class="new-task">
+    <!-- NAVBAR WITH SEARCH & HAMBURGER -->
+    <nav class="navbar">
+      <div class="logo">Empire.dev</div>
       
-      <div class="btn-group">
-        <button class="cta-btn primary">Get Started</button>
-        <button class="cta-btn secondary" disabled>In Progress</button>
+      <!-- Search Bar (Desktop) -->
+      <form class="search-bar" id="searchForm">
+        <input type="text" id="searchInput" placeholder="🔍 Search projects..." aria-label="Search">
+        <button type="submit">Search</button>
+      </form>
+      
+      <!-- Hamburger Menu (Mobile) -->
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">☰</button>
+      
+      <!-- Navigation Links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#" class="nav-item active">Home</a></li>
+        <li><a href="#">Skills</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- ACTION BUTTONS -->
+    <div class="button-container">
+      <button class="btn primary">Primary Button</button>
+      <button class="btn secondary">Secondary Button</button>
+      <button class="btn disabled" disabled>Disabled Button</button>
+    </div>
+
+    <!-- FEATURED CARDS SECTION -->
+    <section class="cards-section">
+      <h2 class="section-heading">Featured Projects</h2>
+      <div class="cards-grid">
+        <!-- Card 1 -->
+        <div class="card">
+          <div class="card-image">
+            <img src="https://picsum.photos/400/250?random=1" alt="React Native Project" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3>React Native App</h3>
+            <p>Cross-platform mobile development using React Native for iOS & Android.</p>
+            <button class="card-btn">View Demo</button>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+          <div class="card-image">
+            <img src="https://picsum.photos/400/250?random=2" alt="Web Development" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3>Fullstack Website</h3>
+            <p>Modern responsive websites with HTML5, CSS3, JavaScript ES6+.</p>
+            <button class="card-btn">View Demo</button>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+          <div class="card-image">
+            <img src="https://picsum.photos/400/250?random=3" alt="UI/UX Design" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3>Responsive UI/UX</h3>
+            <p>Mobile-first design patterns and responsive layouts for all devices.</p>
+            <button class="card-btn">View Demo</button>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- PROJECT CARDS -->
-  <section class="projects">
-    <h2 class="section-title">My Projects</h2>
-    <div class="projects-grid">
-      <!-- CARD 1 - WORKING IMAGE -->
-      <article class="project-card">
-        <div class="project-image">
-          <img src="https://picsum.photos/400/220?random=1" alt="React Native" loading="lazy">
-        </div>
-        <div class="project-info">
-          <h3>React Native App</h3>
-          <p>Cross-platform mobile apps for iOS & Android using React Native.</p>
-          <button class="project-btn">View Demo</button>
-        </div>
-      </article>
-
-      <!-- CARD 2 - WORKING IMAGE -->
-      <article class="project-card">
-        <div class="project-image">
-          <img src="https://picsum.photos/400/220?random=2" alt="Web Development" loading="lazy">
-        </div>
-        <div class="project-info">
-          <h3>Fullstack Website</h3>
-          <p>Modern web apps with HTML5, CSS3, JavaScript ES6+ & responsive design.</p>
-          <button class="project-btn">View Demo</button>
-        </div>
-      </article>
-
-      <!-- CARD 3 - WORKING IMAGE -->
-      <article class="project-card">
-        <div class="project-image">
-          <img src="https://picsum.photos/400/220?random=3" alt="Responsive UI" loading="lazy">
-        </div>
-        <div class="project-info">
-          <h3>Responsive UI</h3>
-          <p>Mobile-first designs that work perfectly on all devices and screen sizes.</p>
-          <button class="project-btn">View Demo</button>
-        </div>
-      </article>
-    </div>
+    </section>
   </section>
 
   <script src="js/script.js"></script>
