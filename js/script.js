@@ -1,13 +1,14 @@
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
-  
+
   // HAMBURGER MENU FUNCTIONALITY
   const hamburgerBtn = document.getElementById('hamburgerBtn');
   const navLinks = document.getElementById('navLinks');
-  
-  hamburgerBtn.addEventListener('click', function() {
+
+  hamburgerBtn.addEventListener('click', function(e) {
+    e.stopPropagation(); // prevents immediate close
     navLinks.classList.toggle('active');
-    
+
     // Lock body scroll when menu is open
     if (navLinks.classList.contains('active')) {
       document.body.style.overflow = 'hidden';
@@ -15,22 +16,33 @@ document.addEventListener('DOMContentLoaded', function() {
       document.body.style.overflow = '';
     }
   });
-  
-  // Close menu when clicking any nav link
-  document.querySelectorAll('.nav-item').forEach(link => {
+
+  // Close menu when clicking nav links
+  document.querySelectorAll('#navLinks a').forEach(link => {
     link.addEventListener('click', function() {
       navLinks.classList.remove('active');
       document.body.style.overflow = '';
     });
   });
-  
+
+  // Close menu when clicking outside
+  document.addEventListener('click', function(e) {
+    const clickedHamburger = e.target.closest('#hamburgerBtn');
+    const clickedInsideNav = e.target.closest('.navbar');
+
+    if (!clickedInsideNav && !clickedHamburger && navLinks.classList.contains('active')) {
+      navLinks.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+
   // SEARCH BAR FUNCTIONALITY
   const searchForm = document.getElementById('searchForm');
   const searchInput = document.getElementById('searchInput');
-  
+
   searchForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    
+
     const query = searchInput.value.trim();
     if (query) {
       alert(`🔍 Searching for: "${query}"`);
@@ -40,19 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
       searchInput.focus();
     }
   });
-  
-  // Close mobile menu when clicking outside (except hamburger button)
-document.addEventListener('click', function(e) {
-    const clickedHamburger = e.target.closest('#hamburgerBtn');
-    const clickedInsideNav = e.target.closest('.navbar');
 
-    if (!clickedInsideNav && !clickedHamburger && navLinks.classList.contains('active')) {
-        navLinks.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-});
-  
-  
   // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -66,4 +66,5 @@ document.addEventListener('click', function(e) {
       }
     });
   });
+
 });
