@@ -167,10 +167,10 @@ body {
   cursor: not-allowed;
 }
 
-/* PROJECTS - FIXED VERSION */
+/* PROJECTS - 3 HORIZONTAL CARDS */
 .projects {
   padding: 4rem 2rem;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -182,134 +182,6 @@ body {
   font-weight: 700;
 }
 
-/* HORIZONTAL INLINE CARDS - FIXED */
+/* 3 CARDS ALWAYS HORIZONTAL */
 .projects-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-}
-
-.project-card {
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-  transition: all 0.4s ease;
-  flex: 0 1 320px;        /* Flexible width */
-  max-width: 350px;       /* Prevent overflow */
-  min-width: 280px;       /* Minimum width */
-}
-
-.project-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-}
-
-/* IMAGE FIX - NOW VISIBLE */
-.project-image {
-  width: 100%;
-  height: 220px;
-  overflow: hidden;
-}
-
-.project-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.project-info {
-  padding: 25px;
-}
-
-.project-info h3 {
-  color: #333;
-  font-size: 1.5rem;
-  margin-bottom: 12px;
-}
-
-.project-info p {
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.project-btn {
-  width: 100%;
-  padding: 12px;
-  background: linear-gradient(45deg, #4ecdc4, #44a08d);
-  color: white;
-  border: none;
-  border-radius: 10px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.project-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 25px rgba(78,205,196,0.4);
-}
-
-/* MOBILE RESPONSIVE */
-@media (max-width: 768px) {
-  .search-form {
-    display: none;
-  }
-  
-  .main-nav {
-    position: fixed;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    background: rgba(255,255,255,0.98);
-    flex-direction: column;
-    padding: 2rem;
-    transform: translateY(-100%);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  }
-
-  .main-nav.active {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-
-  .projects-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .project-card {
-    max-width: 100%;
-    min-width: 0;
-  }
-
-  .header {
-    padding: 1rem;
-  }
-}
-
-/* Extra small screens */
-@media (max-width: 480px) {
-  .projects {
-    padding: 2rem 1rem;
-  }
-  
-  .hero {
-    padding: 2rem 1rem;
-  }
-}
+  dis
