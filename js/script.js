@@ -78,21 +78,12 @@ function showNotification(type, message) {
   notif.classList.add('notification', type);
   notif.innerHTML = `
     <span>${message}</span>
-    <button>Dismiss</button>
+    <button onclick="this.parentElement.remove()">Dismiss</button>
   `;
 
-  // Dismiss action
-  notif.querySelector('button').addEventListener('click', () => {
-    notif.remove();
-  });
-
   container.appendChild(notif);
-
-  // Auto-remove after 4 sec
-  setTimeout(() => {
-    notif.remove();
-  }, 4000);
 }
+
 
 // Buttons Trigger
 document.getElementById('showSuccess').addEventListener('click', () => {
