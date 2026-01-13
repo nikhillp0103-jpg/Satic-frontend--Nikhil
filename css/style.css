@@ -484,3 +484,48 @@ body {
     padding: 6px 12px;
   }
 }
+
+.notif-actions {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.notif-actions button {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+  font-size: 15px;
+}
+
+#showSuccess {
+  background: #22c55e;
+  color: white;
+}
+#showSuccess:hover {
+  opacity: 0.85;
+}
+
+#showError {
+  background: #ef4444;
+  color: white;
+}
+#showError:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 480px) {
+  .notif-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  .notif-actions button {
+    width: 90%;
+  }
+}
+
