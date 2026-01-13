@@ -529,3 +529,38 @@ body {
   }
 }
 
+
+
+.notify-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.notify-btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.notify-btn.success {
+  background: linear-gradient(90deg, #28c76f, #7cea96);
+  color: #fff;
+}
+
+.notify-btn.error {
+  background: linear-gradient(90deg, #ff4d4f, #ff9068);
+  color: #fff;
+}
+
+.notify-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+
