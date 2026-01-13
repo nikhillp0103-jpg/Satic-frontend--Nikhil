@@ -68,3 +68,37 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 });
+
+
+// NOTIFICATION SYSTEM
+function showNotification(type, message) {
+  const container = document.getElementById('notificationContainer');
+
+  const notif = document.createElement('div');
+  notif.classList.add('notification', type);
+  notif.innerHTML = `
+    <span>${message}</span>
+    <button>Dismiss</button>
+  `;
+
+  // Dismiss action
+  notif.querySelector('button').addEventListener('click', () => {
+    notif.remove();
+  });
+
+  container.appendChild(notif);
+
+  // Auto-remove after 4 sec
+  setTimeout(() => {
+    notif.remove();
+  }, 4000);
+}
+
+// Buttons Trigger
+document.getElementById('showSuccess').addEventListener('click', () => {
+  showNotification('success', 'Day 7 Task Completed Successfully!');
+});
+
+document.getElementById('showError').addEventListener('click', () => {
+  showNotification('error', 'Something went wrong!');
+});
