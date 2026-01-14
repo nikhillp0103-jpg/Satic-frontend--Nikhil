@@ -59,16 +59,27 @@
 
 
     
-<section id="day8-form-section" style="margin-top: 40px;">
-  <form id="day8Form">
-    <label for="taskInput">Enter something:</label>
-    <input type="text" id="taskInput" placeholder="Type here…" />
+<section class="contact-section">
+  <h2>Contact Me</h2>
 
-    <p id="formError" style="display:none; color:#ff4d4f; margin:6px 0 0;"></p>
+  <form id="contactForm" action="https://formspree.io/f/your_form_id" method="POST">
+    
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name" required />
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
+
+    <p id="formError" class="error-text" style="display:none;"></p>
+    <p id="formSuccess" class="success-text" style="display:none;"></p>
 
     <button id="submitBtn" disabled>Submit</button>
   </form>
 </section>
+    
     
     
     <!-- ACTION BUTTONS -->
