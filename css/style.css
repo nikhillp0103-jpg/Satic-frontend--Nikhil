@@ -565,5 +565,57 @@ body {
 
 
 
+.contact-section {
+  max-width: 400px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-section h2 {
+  text-align: center;
+}
+
+.contact-section input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+.contact-section input:focus {
+  border-color: #0070f3;
+}
+
+.contact-section button {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #0070f3;
+  color: white;
+  font-size: 16px;
+  opacity: 0.5;
+  cursor: not-allowed;
+  transition: 0.2s;
+}
+
+.contact-section button.enabled {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.error-text {
+  color: #ff3b3b;
+}
+
+.success-text {
+  color: #23a55a;
+}
 
 
