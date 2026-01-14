@@ -134,3 +134,46 @@ document.getElementById('day8Form').addEventListener('submit', (e) => {
   submitBtn.classList.remove('enabled');
 });
 
+
+
+
+
+const cf = document.getElementById('contactForm');
+const nameInput = document.getElementById('name');
+const emailInput = document.getElementById('email');
+const messageInput = document.getElementById('message');
+const submitBtn = document.getElementById('submitBtn');
+const formError = document.getElementById('formError');
+const formSuccess = document.getElementById('formSuccess');
+
+function validate() {
+  if (
+    nameInput.value.trim() &&
+    emailInput.value.trim() &&
+    messageInput.value.trim()
+  ) {
+    submitBtn.disabled = false;
+    submitBtn.classList.add('enabled');
+  } else {
+    submitBtn.disabled = true;
+    submitBtn.classList.remove('enabled');
+  }
+}
+
+[nameInput, emailInput, messageInput].forEach(input => {
+  input.addEventListener('input', validate);
+});
+
+cf.addEventListener('submit', (e) => {
+  if (!emailInput.value.includes('@')) {
+    e.preventDefault();
+    formError.textContent = "Enter valid email!";
+    formError.style.display = 'block';
+    return;
+  }
+
+  formError.style.display = 'none';
+  formSuccess.style.display = 'block';
+  formSuccess.textContent = "Message Sent Successfully!";
+});
+
