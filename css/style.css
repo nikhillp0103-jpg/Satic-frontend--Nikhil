@@ -564,3 +564,39 @@ body {
 }
 
 
+#day8Form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 300px;
+}
+
+#taskInput {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+}
+
+#taskInput.error {
+  border-color: #ff4d4f;
+}
+
+#submitBtn {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  background: #0070f3;
+  color: white;
+  opacity: 0.5;
+  transition: 0.2s;
+}
+
+#submitBtn.enabled {
+  opacity: 1;
+}
+
