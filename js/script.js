@@ -94,3 +94,43 @@ document.getElementById('showError').addEventListener('click', () => {
   showNotification('error', 'Something went wrong!');
 });
 
+
+
+
+const form = document.getElementById('contactForm');
+const nameInput = document.getElementById('name');
+const submitBtn = document.getElementById('submitBtn');
+const formError = document.getElementById('formError');
+const formSuccess = document.getElementById('formSuccess');
+
+function validateForm() {
+  const valid = nameInput.value.trim() !== "";
+
+  submitBtn.disabled = !valid;
+
+  if (valid) {
+    submitBtn.classList.add('enabled');
+  } else {
+    submitBtn.classList.remove('enabled');
+  }
+}
+
+nameInput.addEventListener('input', validateForm);
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const name = nameInput.value.trim();
+
+  if (name === "") {
+    formError.textContent = "Name cannot be empty!";
+    formError.style.display = 'block';
+    formSuccess.style.display = 'none';
+    return;
+  }
+
+  formError.style.display = 'none';
+  formSuccess.style.display = 'block';
+  formSuccess.textContent = "Form submitted successfully!";
+});
+
