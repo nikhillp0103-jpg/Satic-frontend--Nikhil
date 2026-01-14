@@ -564,6 +564,9 @@ body {
 }
 
 
+
+
+
 #day8Form {
   display: flex;
   flex-direction: column;
@@ -598,5 +601,59 @@ body {
 
 #submitBtn.enabled {
   opacity: 1;
+}
+
+
+.contact-section {
+  max-width: 400px;
+  margin: 40px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-section h2 {
+  text-align: center;
+}
+
+.contact-section input,
+.contact-section textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.contact-section input:focus,
+.contact-section textarea:focus {
+  border-color: #007bff;
+}
+
+.contact-section button {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #0070f3;
+  color: white;
+  opacity: 0.5;
+  cursor: not-allowed;
+  transition: 0.2s;
+}
+
+.contact-section button.enabled {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.error-text {
+  color: #ff4d4f;
+}
+
+.success-text {
+  color: #28a745;
 }
 
