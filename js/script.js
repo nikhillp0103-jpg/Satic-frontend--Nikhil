@@ -93,3 +93,44 @@ document.getElementById('showSuccess').addEventListener('click', () => {
 document.getElementById('showError').addEventListener('click', () => {
   showNotification('error', 'Something went wrong!');
 });
+
+
+
+// DAY 8 FORM LOGIC
+const taskInput = document.getElementById('taskInput');
+const submitBtn = document.getElementById('submitBtn');
+const formError = document.getElementById('formError');
+
+taskInput.addEventListener('input', () => {
+  const value = taskInput.value.trim();
+
+  if (value.length === 0) {
+    submitBtn.disabled = true;
+    submitBtn.classList.remove('enabled');
+    formError.style.display = 'none';
+    taskInput.classList.remove('error');
+  } else {
+    submitBtn.disabled = false;
+    submitBtn.classList.add('enabled');
+    formError.style.display = 'none';
+    taskInput.classList.remove('error');
+  }
+});
+
+document.getElementById('day8Form').addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const value = taskInput.value.trim();
+  if (value.length === 0) {
+    formError.textContent = 'Please enter something!';
+    formError.style.display = 'block';
+    taskInput.classList.add('error');
+    return;
+  }
+
+  alert(`Form Submitted: ${value}`);
+  taskInput.value = '';
+  submitBtn.disabled = true;
+  submitBtn.classList.remove('enabled');
+});
+
