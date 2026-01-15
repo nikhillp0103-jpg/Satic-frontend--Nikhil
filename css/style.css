@@ -1,121 +1,3 @@
-/* day9 */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
-/* PUSH FOOTER TO BOTTOM */
-.page-content {
-  flex: 1 0 auto;  /* GROWS + NEVER SHRINKS */
-}
-
-/* PERFECT STICKY FOOTER */
-.site-footer {
-  flex-shrink: 0;  /* NEVER SHRINKS */
-  width: 100%;
-  background: rgba(15, 15, 15, 0.95);
-  backdrop-filter: blur(25px);
-  border-top: 1px solid rgba(255,255,255,0.1);
-  position: relative;
-  z-index: 1000;
-}
-
-.site-footer::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(45deg, rgba(0,0,0,0.3), transparent);
-  z-index: -1;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 3rem;
-  padding: 3rem 2rem;
-}
-
-.footer-brand h3 { color: #fff; margin: 0 0 0.5rem 0; }
-.footer-brand p { color: rgba(255,255,255,0.8); margin: 0; }
-
-.footer-links h4, .footer-social h4 { 
-  color: #fff; 
-  margin-bottom: 1rem; 
-}
-
-.footer-links ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-links li { margin-bottom: 0.5rem; }
-.footer-links a {
-  color: rgba(255,255,255,0.8);
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-.footer-links a:hover { color: #fff; padding-left: 0.5rem; }
-
-.footer-social {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.social {
-  width: 45px; height: 45px;
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 12px;
-  color: #fff;
-  font-size: 1.1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.social:hover {
-  background: rgba(255,255,255,0.25);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-}
-
-.footer-bottom {
-  background: rgba(0,0,0,0.4);
-  text-align: center;
-  padding: 1.5rem;
-  color: rgba(255,255,255,0.7);
-  font-size: 0.9rem;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .footer-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 2rem;
-    padding: 2rem 1rem;
-  }
-}
-
-
-
-
-
 
 * {
   margin: 0;
@@ -199,7 +81,7 @@ body {
   background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
+  backgrou
 }
 
 .search-bar {
@@ -737,3 +619,84 @@ body {
 }
 
 
+/* DAY 9 STICKY FOOTER FIX */
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-wrapper {
+  flex: 1;
+}
+
+.sticky-footer {
+  background: rgba(0,0,0,0.9);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: auto;
+}
+
+.footer-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 2rem;
+  padding: 3rem 2rem;
+}
+
+.footer-col h3, .footer-col h4 {
+  color: white;
+  margin: 0 0 1rem 0;
+}
+
+.footer-col ul { list-style: none; padding: 0; margin: 0; }
+.footer-col li { margin-bottom: 0.5rem; }
+.footer-col a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+}
+.footer-col a:hover { color: white; }
+
+.social {
+  display: inline-flex;
+  width: 45px;
+  height: 45px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+.social:hover {
+  background: rgba(255,255,255,0.2);
+  transform: translateY(-2px);
+}
+
+.footer-bar {
+  background: rgba(0,0,0,0.5);
+  text-align: center;
+  padding: 1rem;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+}
