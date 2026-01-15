@@ -134,3 +134,14 @@ form.addEventListener('submit', (e) => {
   formSuccess.textContent = "Form submitted successfully!";
 });
 
+
+// DAY 9: FOOTER LINKS - SMOOTH SCROLL (APPEND TO EXISTING SCRIPT)
+document.querySelectorAll('.footer-column a[href^="#"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
