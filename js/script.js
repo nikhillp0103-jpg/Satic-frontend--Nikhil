@@ -145,3 +145,21 @@ document.querySelectorAll('.footer-column a[href^="#"]').forEach(link => {
     }
   });
 });
+
+
+// day10
+window.onscroll = function() {
+  const button = document.getElementById('goToTop');
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    button.classList.add('show');
+  } else {
+    button.classList.remove('show');
+  }
+};
+
+document.getElementById('goToTop').onclick = function() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+};
