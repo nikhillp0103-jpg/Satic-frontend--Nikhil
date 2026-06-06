@@ -1,28 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Admin Dashboard</title>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard PRO</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="sidebar">
-  <h2>Dashboard</h2>
-  <p>Home</p>
-  <p>Users</p>
-  <p>Reports</p>
+  <h2>⚡ Admin</h2>
+  <a href="#">Dashboard</a>
+  <a href="#">Users</a>
+  <a href="#">Orders</a>
+  <a href="#">Analytics</a>
 </div>
 
 <div class="main">
-  <h1>Welcome Admin</h1>
+
+  <header>
+    <h1>Dashboard Overview</h1>
+    <button onclick="toggleTheme()">🌙</button>
+  </header>
 
   <div class="cards">
-    <div class="card">Users: 1200</div>
-    <div class="card">Sales: $5400</div>
-    <div class="card">Visits: 8900</div>
+    <div class="card">💰 Revenue<br><b>$12,450</b></div>
+    <div class="card">👥 Users<br><b>1,240</b></div>
+    <div class="card">🛒 Orders<br><b>320</b></div>
+    <div class="card">📈 Growth<br><b>+24%</b></div>
   </div>
 
-  <button onclick="toggleDark()">Toggle Dark Mode</button>
+  <div class="panel">
+    <h3>Activity</h3>
+    <ul>
+      <li>User John signed up</li>
+      <li>New order placed</li>
+      <li>Payment received</li>
+    </ul>
+  </div>
+
 </div>
 
 <script src="script.js"></script>
