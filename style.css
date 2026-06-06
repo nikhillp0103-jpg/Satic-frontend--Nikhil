@@ -2,14 +2,22 @@ body {
   margin: 0;
   font-family: Arial;
   display: flex;
+  background: #0f172a;
+  color: white;
 }
 
 .sidebar {
-  width: 200px;
-  background: #111827;
-  color: white;
+  width: 220px;
   height: 100vh;
+  background: #111827;
   padding: 20px;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  margin: 15px 0;
+  text-decoration: none;
 }
 
 .main {
@@ -17,13 +25,32 @@ body {
   padding: 20px;
 }
 
-.cards {
+header {
   display: flex;
-  gap: 20px;
+  justify-content: space-between;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 20px;
 }
 
 .card {
-  background: #e5e7eb;
+  background: #1e293b;
   padding: 20px;
   border-radius: 10px;
+}
+
+.panel {
+  margin-top: 20px;
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.light {
+  background: #f1f5f9;
+  color: black;
 }
