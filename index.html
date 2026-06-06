@@ -1,175 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>nik | Frontend Task - Day 6</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-
-
-
-  <!-- NEW TASK - DAY 6 FEATURES -->
-  <section class="new-task">
-    <!-- NAVBAR WITH SEARCH & HAMBURGER -->
-    <nav class="navbar">
-      <div class="logo">THE EMPIRE</div>
-      
-      <!-- Search Bar (Desktop) -->
-      <form class="search-bar" id="searchForm">
-        <input type="text" id="searchInput" placeholder="🔍 Search projects..." aria-label="Search">
-        <button type="submit">Search</button>
-      </form>
-      
-      <!-- Hamburger Menu (Mobile) -->
-      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">☰</button>
-      
-      <!-- Navigation Links -->
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#" class="nav-item active">Home</a></li>
-        <li><a href="#">Skills</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-
-
-    
-<!-- ORIGINAL MAIN CONTENT (KEEP AS IS) -->
-  <section id="home">
-    <section id="about">
-  <div class="page-wrapper">
-    <h1>Welcome</h1></h1>
-    <h2>Task Completed</h2>
-    <p>Name: <strong>Nikhil Patel</strong></p>
-    <p>IMCA-2 Deployed on GitHub Pages</p>
-    <button class="original-btn">Send</button>
-    <button class="original-btn" disabled>Disabled</button>
-
-    <!--form -->
-    <section id="contact">
-   <section class="contact-section">
-  <h2>Contact Me</h2>
-
-  <form id="contactForm" novalidate>
-    
-    <label for="name">Name</label>
-    <input 
-      type="text" 
-      id="name" 
-      placeholder="Enter your name" 
-      required 
-    />
-
-    <p id="formError" class="error-text" style="display:none;"></p>
-    <p id="formSuccess" class="success-text" style="display:none;"></p>
-
-    <button id="submitBtn" disabled>Submit</button>
-  </form>
-   </section>
-    
-
-      
-<div class="notif-actions">
-  <button id="showSuccess">Show Success</button>
-  <button id="showError">Show Error</button>
+<div class="sidebar">
+  <h2>Dashboard</h2>
+  <p>Home</p>
+  <p>Users</p>
+  <p>Reports</p>
 </div>
 
-<div class="notification-container" id="notificationContainer"></div>
+<div class="main">
+  <h1>Welcome Admin</h1>
 
-    
-    
-    
-    <!-- ACTION BUTTONS -->
-    <div class="button-container">
-      <button class="btn primary">Primary Button</button>
-      <button class="btn secondary">Secondary Button</button>
-      <button class="btn disabled" disabled>Disabled Button</button>
-    </div>
-
-    <!-- FEATURED CARDS SECTION -->
-    <section id="projects">
-    <section class="cards-section">
-      <h2 class="section-heading">Featured Projects</h2>
-      <div class="cards-grid">
-        <!-- Card 1 -->
-        <div class="card">
-          <div class="card-image">
-            <img src="https://picsum.photos/400/250?random=1" alt="React Native Project" loading="lazy">
-          </div>
-          <div class="card-body">
-            <h3>React Native App</h3>
-            <p>Cross-platform mobile development using React Native for iOS & Android.</p>
-            <button class="card-btn">View Demo</button>
-          </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="card">
-          <div class="card-image">
-            <img src="https://picsum.photos/400/250?random=2" alt="Web Development" loading="lazy">
-          </div>
-          <div class="card-body">
-            <h3>Fullstack Website</h3>
-            <p>Modern responsive websites with HTML5, CSS3, JavaScript ES6+.</p>
-            <button class="card-btn">View Demo</button>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="card">
-          <div class="card-image">
-            <img src="https://picsum.photos/400/250?random=3" alt="UI/UX Design" loading="lazy">
-          </div>
-          <div class="card-body">
-            <h3>Responsive UI/UX</h3>
-            <p>Mobile-first design patterns and responsive layouts for all devices.</p>
-            <button class="card-btn">View Demo</button>
-          </div>
-        </div>
-      </div>
-    </section>
-  </section>
-  </main>
+  <div class="cards">
+    <div class="card">Users: 1200</div>
+    <div class="card">Sales: $5400</div>
+    <div class="card">Visits: 8900</div>
   </div>
-  <!-- day 9 -->
-  
-  <footer class="sticky-footer">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <h3>THE EMPIRE</h3>
-        <p>Frontend Developer</p>
-      </div>
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Follow</h4>
-        <a href="#" class="social github">📂</a>
-        <a href="#" class="social linkedin">💼</a>
-        <a href="#" class="social twitter">🐦</a>
-      </div>
-    </div>
-    <div class="footer-bar">
-      <p>© 2026 THE EMPEROR. All rights reserved.</p>
-    </div>
-  </footer>
 
+  <button onclick="toggleDark()">Toggle Dark Mode</button>
+</div>
 
-      <!-- day 10 -->
-      <button id="goToTop" title="Go to top">↑</button>
-        
-
-
-  
-  <script src="js/script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
